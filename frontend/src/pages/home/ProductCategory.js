@@ -20,7 +20,7 @@ const categories = [
     },
   ];
 
-  const Category = (title, image) => {
+  const Category = ({title, image}) => {
     const navigate = useNavigate();
     return(
         <div className="category">

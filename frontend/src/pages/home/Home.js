@@ -43,12 +43,14 @@ const Home = () => {
           <ProductCorousel products={productss} />
         </div>
       </section>
+
       <section className="--bg-grey">
         <div className="container">
           <h3>Categories</h3>
           <ProductCategory/>
         </div>
       </section>
+      
       <section>
         <div className="container">
           <PageHeading heading={"Mobile Phones"} btnText={"Shop Now>>>"} />
