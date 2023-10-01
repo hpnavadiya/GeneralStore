@@ -5,6 +5,8 @@ import HomeInfoBox from './HomeInfoBox'
 import {productData} from "../../components/corousel/data"
 import CorouselItem from '../../components/corousel/CorouselItem'
 import ProductCorousel from '../../components/corousel/Corousel'
+import ProductCategory from './ProductCategory'
+import FooterLinks from '../../components/footer/FooterLinks'
 
 const PageHeading = ({heading, btnText}) => {
   return (
@@ -41,6 +43,19 @@ const Home = () => {
           <ProductCorousel products={productss} />
         </div>
       </section>
+      <section className="--bg-grey">
+        <div className="container">
+          <h3>Categories</h3>
+          <ProductCategory/>
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <PageHeading heading={"Mobile Phones"} btnText={"Shop Now>>>"} />
+          <ProductCorousel products={productss} />
+        </div>
+      </section>
+      <FooterLinks/>  
     </>
   )
 }
