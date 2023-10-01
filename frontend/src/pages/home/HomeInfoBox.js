@@ -4,8 +4,7 @@ import {BsFillCreditCardFill} from "react-icons/bs";
 import {BsCartCheck} from "react-icons/bs";
 import {BsClockHistory} from "react-icons/bs";
 
-
-
+// List of info box details 
 const data = [
     {
       icon: <FaShippingFast size={30} color="#8cb4f5" />,
