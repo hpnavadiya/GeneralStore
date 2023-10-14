@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./auth.module.scss";
 import loginImg from "../../assets/login.png";
 import { Link } from "react-router-dom";
-import Card from "../../components/card/Card";
+import Card from "../components/card/Card";
 
 const Login = () => {
   const [email, setEmail] = useState("");
