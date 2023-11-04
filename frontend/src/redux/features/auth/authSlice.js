@@ -78,6 +78,23 @@ const authSlice = createSlice({
                 state.user = null;
                 toast.success(action.payload);
             })
+            // logout User
+            .addCase(logout.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(logout.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isSuccess = true;
+                state.isLoggedIn = false;
+                state.user = null;
+                toast.success(action.payload)
+            })
+            .addCase(logout.rejected, (state, action) => {
+                state.isLoading = false;
+                state.isError = true;
+                state.message = action.payload;
+                toast.success(action.payload);
+            })
             // get Login Status of User
             .addCase(getLoginStatus.pending, (state) => {
                 state.isLoading = true;
