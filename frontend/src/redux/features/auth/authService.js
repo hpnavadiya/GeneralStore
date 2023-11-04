@@ -12,6 +12,12 @@ const register = async(userData) => {
     return response.data
 }
 
+// Get LogedIn user status
+const getLoginStatus = async () => {
+    const response = await axios.get(API_URL + "getLoginStatus")
+    return response.data;
+}
+
 const authService = {
     register
 }
