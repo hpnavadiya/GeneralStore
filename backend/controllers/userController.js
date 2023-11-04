@@ -109,9 +109,10 @@ const loginUser = asyncHandler(async (req, res) => {
 
 // Logout User
 const logOutUser = asyncHandler(async (req, res) => {
+    // Set cookie
     res.cookie("token", "", {
         path: "/",
-        httpOnly: true,
+        httpOnly: true, // cookie is accessible only through HTTP requests
         expires: new Date(0),
         // secure: true,
         // sameSite: none
