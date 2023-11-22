@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./Profile.scss";
-import PageMenu from '../../components/pageMenu/PageMenu';
+import PageMenu from '../../components/PageMenu/PageMenu';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from '../../components/card/Card';
 import { getUser, updateUser } from '../../redux/features/auth/authSlice';
