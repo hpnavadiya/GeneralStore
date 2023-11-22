@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-export const API_URL = `${BACKEND_URL}/api/users`;
+export const API_URL = `${BACKEND_URL}/api/users/`;
 
 // Register User
-                    // userData recive from form
-const register = async(userData) => {
+// userData recive from form
+const register = async (userData) => {
     const response = await axios.post(API_URL + "register", userData, {
         withCredentials: true,
     })
@@ -30,8 +30,25 @@ const getLoginStatus = async () => {
     return response.data;
 }
 
+// Get user
+const getUser = async () => {
+    const response = await axios.get(API_URL + "getUser")
+    return response.data;
+}
+
+// Update user profile
+const updateUser = async (userData) => {
+    const response = await axios.patch(API_URL + "updateUser", userData)
+    return response.data;
+}
+
 const authService = {
-    register
+    register,
+    login,
+    logout,
+    getLoginStatus,
+    getUser,
+    updateUser
 }
 
 export default authService;
