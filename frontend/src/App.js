@@ -5,8 +5,8 @@ import {
   Routes
 } from "react-router-dom";
 import Home from "./pages/home/Home";
-import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 import { Spinner } from "./components/loader/Loader";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
