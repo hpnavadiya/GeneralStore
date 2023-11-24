@@ -5,7 +5,8 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
 const userRoute = require("./routes/userRoute");
-// const productRoute = require("./routes/productRoute");
+const productRoute = require("./routes/productRoute");
+const categoryRoute = require("./routes/categoryRoutes");
 
 const errorHandler = require("./middleware/errorMiddleware");
 
@@ -40,4 +41,5 @@ app.get("/", (req, res) => {
 })
 
 app.use("/api/users", userRoute);
-// app.use("/api/products", productRoute);
+app.use("/api/products", productRoute);
+app.use("/api/category", categoryRoute);
