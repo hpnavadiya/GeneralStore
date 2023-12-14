@@ -124,7 +124,7 @@ const CartPage = () => {
                 </div>
               ))}
             </div>
-            {/* <div className="col-md-5 cart-summary ">
+           <div className="col-md-5 cart-summary ">
               <h2>Cart Summary</h2>
               <p>Total | Checkout | Payment</p>
               <hr />
@@ -190,7 +190,7 @@ const CartPage = () => {
                   </>
                 )}
               </div>
-            </div> */}
+            </div> 
           </div>
         </div>
       </div>
