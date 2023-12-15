@@ -42,7 +42,8 @@
 
 .form-container form button:hover {
   border: 1px solid rgb(71, 102, 154);
-  background: rgb(71, 102, 154); /* fallback for old browsers */
+  background: rgb(71, 102, 154);
+  /* fallback for old browsers */
   /* background: -webkit-linear-gradient(
     to right,
     #434343,
@@ -62,4 +63,11 @@
 
 .forgot-btn:hover {
   color: white !important;
+}
+
+.categoryStyle {
+  border: 1px solid grey;
+  padding: 5px;
+  margin-bottom: 15px;
+  border-radius: 7px;
 }
