@@ -16,22 +16,23 @@ const CartPage = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  //total price
-  // const totalPrice = () => {
-  //   try {
-  //     let total = 0;
-  //     cart?.map((item) => {
-  //       total = total + item.price;
-  //     });
-  //     return total.toLocaleString("en-US", {
-  //       style: "currency",
-  //       currency: "USD",
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  //detele item
+  // Calculate Total price
+  const totalPrice = () => {
+    try {
+      let total = 0;
+      cart?.map((item) => {
+        total = total + item.price;
+      });
+      return total.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // Detele item from cart
   const removeCartItem = (pid) => {
     try {
       let myCart = [...cart];
@@ -44,38 +45,38 @@ const CartPage = () => {
     }
   };
 
-  //get payment gateway token
-  // const getToken = async () => {
-  //   try {
-  //     const { data } = await axios.get("/api/v1/product/braintree/token");
-  //     setClientToken(data?.clientToken);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  // useEffect(() => {
-  //   getToken();
-  // }, [auth?.token]);
+  // Get payment gateway token
+  const getToken = async () => {
+    try {
+      const { data } = await axios.get("/api/v1/product/braintree/token");
+      setClientToken(data?.clientToken);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getToken();
+  }, [auth?.token]);
 
-  //handle payments
-  // const handlePayment = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const { nonce } = await instance.requestPaymentMethod();
-  //     const { data } = await axios.post("/api/v1/product/braintree/payment", {
-  //       nonce,
-  //       cart,
-  //     });
-  //     setLoading(false);
-  //     localStorage.removeItem("cart");
-  //     setCart([]);
-  //     navigate("/dashboard/user/orders");
-  //     toast.success("Payment Completed Successfully ");
-  //   } catch (error) {
-  //     console.log(error);
-  //     setLoading(false);
-  //   }
-  // };
+  // Handle payment
+  const handlePayment = async () => {
+    try {
+      setLoading(true);
+      const { nonce } = await instance.requestPaymentMethod();
+      const { data } = await axios.post("/api/v1/product/braintree/payment", {
+        nonce,
+        cart,
+      });
+      setLoading(false);
+      localStorage.removeItem("cart");
+      setCart([]);
+      navigate("/dashboard/user/orders");
+      toast.success("Payment Completed Successfully ");
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
   return (
     <Layout>
       <div className=" cart-page">
@@ -124,7 +125,7 @@ const CartPage = () => {
                 </div>
               ))}
             </div>
-           <div className="col-md-5 cart-summary ">
+            <div className="col-md-5 cart-summary ">
               <h2>Cart Summary</h2>
               <p>Total | Checkout | Payment</p>
               <hr />
@@ -190,7 +191,7 @@ const CartPage = () => {
                   </>
                 )}
               </div>
-            </div> 
+            </div>
           </div>
         </div>
       </div>
