@@ -6,7 +6,7 @@ export const shortenText = (text, n) => {
     return text;
   };
   
-  export const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+  export const BACKEND_URL = "https://generalstore.onrender.com";
   
   // Extract id and cart quantity from cartItems
   export function extractIdAndCartQuantity(products) {
